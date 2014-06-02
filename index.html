@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Ladies Learning Code</title>
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<link href="http://fonts.googleapis.com/css?family=Podkova" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="framework/css/reveal.css">
+		<link rel="stylesheet" href="framework/css/theme/llc.css" id="theme">
+		<link rel="stylesheet" href="framework/lib/css/monokai.css">
+		<link rel="stylesheet" href="framework/css/overrides.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<div class="slides">
+
+				<!-- begin editable section -->
+				<section class="center">
+					<h1>The Starter Project</h1>
+					<ul>
+						<li><a href="Base Starting Project/final.html">Link to the starter project</a></li>
+						<li>This is the starting project that you'll use to build your content chunks. It's also the project that the learners will come to Hackapalooza with! Make sure your content and code (CSS in particular) is modular so that it doesn't affect other parts of the site—only the parts you're modifying!</li>
+					</ul>
+				</section>
+				<!-- each <section> element creates a new slide. -->
+				<section class="cover">
+					<h1>Introduction to HTML and CSS</h1>
+					<div class="instructors">
+						<h2>Your Instructor:</h2>
+						<ul>
+							<li>
+								<img src="content/images/heather_avatar.jpg" alt="">
+								<div class="instructor-info">
+									<h3>Heather Payne</h3>
+									<p>heather@heatherpayne.ca</p>
+									<p><a href="http://heatherpayne.ca">heatherpayne.ca</a></p>
+									<p><a href="https://twitter.com/heatherpayne">@heatherpayne</a></p>
+								</div>
+							</li>
+							<li>
+								<img src="content/images/heather_avatar.jpg" alt="">
+								<div class="instructor-info">
+									<h3>Heather Payne</h3>
+									<p>heather@heatherpayne.ca</p>
+									<p><a href="http://heatherpayne.ca">heatherpayne.ca</a></p>
+									<p><a href="https://twitter.com/heatherpayne">@heatherpayne</a></p>
+								</div>
+							</li>
+						</ul>
+						<div class="credits">
+							<p>Thanks to <a href="#">Pearl Chen</a> and <a href="#">Mark Reale</a> for creating the foundation for today's content</p>
+						</div>
+					</div>
+
+				</section>
+
+				<section>
+					<h1>Example Course Outline</h1>
+					<h2>Morning</h2>
+					<ul>
+						<li>Intro to HTML</li>
+						<li>Write the HTML for your first project</li>
+						<li>Intro to CSS</li>
+					</ul>
+					<h2>Afternoon</h2>
+					<ul>
+						<li>More CSS</li>
+						<li>Final touches</li>
+						<li>Fin! And next steps</li>
+					</ul>
+				</section>
+
+				<section class="center">
+					<h1>This slide is centered because it has the class "center" on the &lt;section> element!</h1>
+				</section>
+
+				<section>
+					<h1>A slide with an Image</h1>
+					<img src="content/images/blank_output.jpg">
+				</section>
+
+				<section>
+					<h1>A slide with some HTML Code</h1>
+					<pre><code>
+<!-- remember to escape the < character -->
+&lt;!doctype html>
+&lt;head>
+  &lt;title>Ladies Learning Code HTML and CSS&lt;/title>
+  &lt;style>
+    p {
+    color: red;
+    text-decoration: underline;
+    }
+  &lt;/style>
+&lt;/head>
+&lt;body>
+  &lt;p>This is a paragraph&lt;/p>
+&lt;/body>
+&lt;/html>
+					</code></pre>
+				</section>
+
+				<section data-markdown>
+					# You can write your slides in mardown if you add the `data-markdown` attribute
+
+					- markdown makes it a bit easier to write content for the web
+					- learn more about [markdown syntax](https://daringfireball.net/projects/markdown/syntax)
+
+					## A level 2 header in markdown
+
+					```
+						\\ some code in markdown
+					```
+				</section>
+
+				<!-- end editable section -->
+
+			</div>
+
+		</div>
+
+		<script src="framework/lib/js/head.min.js"></script>
+		<script src="framework/js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: false,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'none', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'framework/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'framework/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'framework/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'framework/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'framework/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'framework/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
