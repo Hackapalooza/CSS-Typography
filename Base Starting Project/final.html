@@ -99,7 +99,13 @@
       font-family: 'Oswald', sans-serif;
     }
 
-    .body-type {
+/* START MY STUFF */
+/*
+*/
+
+
+
+    #about .body-type {
       font-family: "Droid Serif", serif;
       -webkit-column-count: 2;
       -webkit-column-gap: 40px;
@@ -108,12 +114,11 @@
       line-height: 1.6;
     }
 
-    .body-type p {
+    #about p {
       margin-top: 0;
-      text-rendering: optimizeLegibility;
     }
 
-    .body-type h3 {
+    #about h3 {
       margin-top: 0;
       font-family: "Oswald", sans-serif;
       font-weight: 700;
@@ -121,7 +126,7 @@
       -webkit-column-break-before: always;
     }
 
-    .body-type .larger {
+    #about p.larger {
       font-size: 1.25em;
       line-height: 1.5;
       letter-spacing: -0.01em;
@@ -129,24 +134,23 @@
       font-style: italic;
     }
 
-    .about-header {
+/*    #about h2 {
       text-transform: uppercase;
       margin-bottom: 2em;
-    }
+    }*/
 
-
-    img.profile {
+    #about .profile-img {
       float: left;
       max-width: 150px;
       box-shadow: 0 0 4px 2px lightgrey;
       margin-right: 30px;
     }
 
+/* MEDIA QUERIES */
+/*
+*/
     @media (max-width: 1100px) {
-      p.larger {
-        /*-webkit-column-break-before: always;*/
-      }
-      img.profile {
+      #about .profile-img {
         max-width: 40%;
         margin: 0 auto 40px;
         display: block;
@@ -155,15 +159,15 @@
     }
 
     @media (max-width: 800px) {
-      .body-type {
+      #about .body-type {
         -webkit-column-count: 1;
       }
-      .body-type .larger {
+      #about p.larger {
         margin-bottom: 2em;
       }
     }
 
-    @media (max-width: 481px) {
+    @media (max-width: 480px) {
       #about {
         padding-left: 20px;
         padding-right: 20px;
@@ -185,9 +189,11 @@
     <h1>Your name here</h1>
     <p>Your tagline here</p>
   </section>
+
+
   <section id="about" class="about box">
-    <h2 class="about-header">About Me</h2>
-    <img class="profile" src="images/photo_zak.jpg">
+    <h2>About Me</h2>
+    <img class="profile-img" src="images/photo_zak.jpg">
     <div class="body-type">
       <p class="larger">Zachary Kain is a hardware, software and thought-ware maker on the <a href="http://heistmade.com">@heistmade</a> crew. He works as a designer & writer creating compelling new media experiences, and devotes his spare time towards making humanity smarter through creative and technical education.</p>
       
@@ -197,6 +203,11 @@
       
     </div>
   </section>
+
+
+
+
+
   <section id="favourites" class="favourites box">
     <h2>My Favourite Things</h2>
     <h3>Here are a few things I really love</h3>

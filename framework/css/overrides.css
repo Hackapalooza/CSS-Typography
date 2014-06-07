@@ -52,3 +52,7 @@
 .reveal .georgia {
 	font-family: Georgia;
 }
+
+.reveal .left-align {
+	text-align: left;
+}

@@ -49,8 +49,8 @@
 								<img src="content/images/photo_zak.jpg" alt="">
 								<div class="instructor-info">
 									<h3>Zachary (Zak) Kain</h3>
-									<p>zakkain@gmail.com</p>
-									<p><a href="http://draftingcode.com/colophon#about">draftingcode.com</a></p>
+									<p>email: zakkain@gmail.com</p>
+									<p>site: <a href="http://zacharykain.ca/">zacharykain.ca</a></p>
 									<p><a href="https://twitter.com/zakkain">@zakkain</a></p>
 								</div>
 							</li>
@@ -176,10 +176,10 @@
 
 				<section class="center" data-markdown>
 					# Let’s choose some typefaces!
-					- [Typekit](http://typekit.com)
 					- [Google Fonts](http://google.com/fonts)
-					- Inspiration: [Just My Type](http://justmytype.co/typekit/)
+					- [Typekit](http://typekit.com)
 					- Inspiration: [Google Font Pairing](http://www.onextrapixel.com/2013/03/11/10-great-font-combinations-from-google-web-fonts/)
+					- Inspiration: [Just My Type](http://justmytype.co/typekit/)
 				</section>
 
 
@@ -187,34 +187,329 @@
 					<h1>So, what else makes good type?</h1>
 				</section>
 
-
-
 				<section class="center">
 					<img src="content/images/power-triangle.png" class="no-border">
 				</section>
 
+				<section class="center">
+					<img src="content/images/base-project.png">
+				</section>
+
+				<section class="center" data-markdown>
+					# Line length?
+					- [line length readability](http://baymard.com/blog/line-length-readability)
+					- [typography generator](http://www.pearsonified.com/typography/)
+				</section>
+
+				<section class="center">
+					<h1>Let's get to work!</h1>
+				</section>
+
+				<section data-markdown>
+					# Get our content set up
+					- Personal photo
+					- Get some real text in there
+					- "primary" paragraph
+					- title and "secondary" paragraph
+				</section>
+
 				<section>
-					<h1>A slide with some HTML Code</h1>
+					Wrap all our text content in a `div`
+
 					<pre><code>
-<!-- remember to escape the < character -->
-&lt;!doctype html>
-&lt;head>
-  &lt;title>Ladies Learning Code HTML and CSS&lt;/title>
-  &lt;style>
-    p {
-    color: red;
-    text-decoration: underline;
-    }
-  &lt;/style>
-&lt;/head>
-&lt;body>
-  &lt;p>This is a paragraph&lt;/p>
-&lt;/body>
-&lt;/html>
+&lt;div class="body-type"&gt;
+	&lt;p>Zachary Kain is a hardware, software and thought-ware maker on the @heistmade
+	crew. He works as a designer & writer creating compelling new media experiences, and
+	devotes his spare time towards making humanity smarter through creative and technical
+	education.&lt;/p&gt;
+
+	&lt;h3>My Ethos&lt;/h3>
+
+	&lt;p>Believe in community. Learn from your peers every day, and every day aim to teach someone in turn. It is important to remember where we come from, and how we arrived where we are.&lt;/p>
+
+	&lt;p>Be mindful of the artifacts and culture you create; strive to uphold principles of accessibility, durability and social sustainability. Ply your trade in the service of positive change.&lt;/p>
+&lt;/div&gt;	
+					</code></pre>
+				</section>
+		
+				<section class="center">
+					<img src="content/images/final-project.png">
+				</section>
+
+				<section>
+					<h1>Let's spruce up our paragraph a bit</h1>
+
+					<pre><code>
+#about .body-type {
+	font-family: "Droid Serif", serif;
+	font-size: 14px;
+	line-height: 1.6;
+}
 					</code></pre>
 				</section>
 
 
+				<section>
+					<h1>CSS Columns</h1>
+					<p>Let's turn our big text block into a newspaper-inspired column layout</p>
+					<pre><code>
+#about .body-type {
+	column-count: 2;
+	column-gap: 40px;
+	column-rule: 1px solid lightgrey;
+}
+					</code></pre>
+				</section>
+
+				<section>
+					<h1>Make sure it works in all browsers</h1>
+					<p>Some browsers need a special version of the "column" rules to make it work:</p>
+
+					<pre><code>
+/* Chrome, Safari, iPhone, etc */
+-webkit-column-count: 2;
+-webkit-column-gap: 40px;
+-webkit-column-rule: 1px solid lightgrey;
+
+/* Firefox */
+-moz-column-count: 2;
+-moz-column-gap: 40px;
+-moz-column-rule: 1px solid lightgrey;
+
+/* Internet Explorer */
+column-count: 2;
+column-gap: 40px;
+column-rule: 1px solid lightgrey;
+					</code></pre>
+				</section>
+
+				<section>
+					<h1>Wranglin’ that profile image!</h1>
+					<pre><code>
+#about .profile-img {
+  float: left; /* push the image to the side */
+  margin-right: 30px; /* make some space between the image and our text */
+  max-width: 150px; /* restrict the size of the image */
+  box-shadow: 0 0 4px 2px lightgrey; /* add a nice subtle shadow */
+}
+					</code></pre>
+				</section>
+
+				<section>
+					<h1>Here's where we are so far:</h1>
+
+					<img src="content/images/progress-1.png">
+					<br>
+					<br>
+					<p>Pretty good, right? But let's push it further!</p>
+				</section>
+
+				<section data-markdown>
+					# Let's beef up that first paragraph
+						&lt;p class="larger">
+							Zachary Kain is a hardware, software and
+							thought-ware maker on the @heistmade crew. He works as a
+							designer & writer creating compelling new media experiences, 
+							and devotes his spare time towards making humanity smarter 
+							through creative and technical education.
+						&lt;/p>
+				</section>
+
+				<section data-markdown>
+					Now let's style that "larger" paragraph
+						    #about p.larger {
+						    	/* font size and line height */
+								font-size: 1.25em;
+								line-height: 1.5;
+
+								/* little refinements and details */
+								font-weight: 400;
+								font-style: italic;
+								letter-spacing: -0.01em;
+							}
+				</section>
+
+				<section class="center">
+					<img src="content/images/progress-2.png">
+				</section>
+
+				<section data-markdown>
+					# Fixing up the left column
+					- Extra space at the top of the column
+					- headline should be in column 2
+				</section>
+
+				<section>
+					<h1>Let's get those tweaks done!</h1>
+					<pre><code>
+/* remove the space on top of paragraphs */
+#about p {
+	margin-top: 0;
+}
+
+/* fix up that sub-heading */
+#about h3 {
+	margin-top: 0;
+
+	font-family: "Oswald", sans-serif;
+	font-weight: 700;
+	text-transform: uppercase;
+
+/* BREAK a new column BEFORE this element */
+	-webkit-column-break-before: always;
+	-moz-column-break-before: always;
+	column-break-before: always;
+}
+					</code></pre>
+				</section>
+
+
+				<section class="center">
+					<img src="content/images/progress-3.png">
+				</section>
+
+				<section data-markdown class="center">
+					# OK, how are we feeling?
+				</section>
+
+				<section class="center">
+					<h1>Responsive Design Bonus Round!</h1>
+					<img src="http://zkkn.co/bling.gif" alt="">
+				</section>
+
+				<section>
+					<h1>How do we do responsive design?</h1>
+					<p>"Media Queries" let us write CSS that only works at a certain screen size. They look like this:</p>
+
+					<pre><code>
+@media (max-width: 800px) {
+	
+	#about {
+	  background: red;
+	}
+
+}
+					</code></pre>
+				</section>
+
+				<section class="center">
+					<h1>Let's find out where our site starts looking wonky</h1>
+				</section>
+
+
+				<section data-markdown class="center">
+					# First "breakpoint," 1100px wide
+					At around 1100px wide, our `.larger` text starts breaking down
+				</section>
+
+				<section class="center">
+					<h1>First "breakpoint," 1100px wide</h1>
+
+					<pre><code>
+@media (max-width: 1100px) {
+	
+	#about .profile-img {
+	  max-width: 40%; /* make the image wider */
+	  margin: 0 auto 40px; /* give it some space on the bottom */
+	  display: block; /* make sure it pushes down our paragraphs */
+	  float: none; /* remove the float we put on earlier */
+	}
+
+}
+
+					</code></pre>
+				</section>
+
+				<section class="center">
+					<img src="content/images/progress-4.png">
+				</section>
+
+				<section class="center">
+					<h1>Second "breakpoint," 800px wide</h1>
+					<p>At around 800px, 2-columns gets a bit cramped</p>
+				</section>
+
+				<section class="center">
+					<h1>Second "breakpoint,", 800px wide</h1>
+
+					<pre><code>
+@media (max-width: 800px) {
+
+      #about .body-type {
+      	/* take our block down to one column, from two */
+        -webkit-column-count: 1;
+        -moz-column-count: 1;
+        column-count: 1;
+      }
+    
+      #about p.larger {
+      	/* give our larger paragraph some bottom space */
+        margin-bottom: 2em;
+      }
+
+}
+					</code></pre>
+				</section>
+
+				<section class="center">
+					<img src="content/images/progress-5.png">
+				</section>		
+
+				<section class="center">
+					<h1>Final "breakpoint,", 480px</h1>
+					There's too much space on the sides when we get to a smartphone size
+				</section>		
+
+				<section class="center">
+					<h1>Final "breakpoint,", 480px</h1>
+
+					<pre><code>
+@media (max-width: 481px) {
+
+      #about {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+    
+}
+					</code></pre>
+				</section>
+
+				<section class="center">
+					<img src="content/images/progress-6.png">
+				</section>		
+
+				<section class="center">
+					<h1>Looks like we're done, folks!</h1>
+				</section>
+
+
+
+				<section class="center">
+					<h1 class="pullquote big-quote left-align">“Web Design is 95% Typography.”</h1>
+					<br>
+					<br>
+					<p class="pullquote small-quote left-align">Typography has one plain duty before it and that is to convey information in writing. No argument or consideration can absolve typography from this duty. A work which cannot be read becomes a product without purpose.</p>
+				</section>
+
+				<section class="cover">
+					<h1>Thank you!</h1>
+					<div class="instructors">
+						<h2>Come find me:</h2>
+						<ul>
+							<li>
+								<img src="content/images/photo_zak.jpg" alt="">
+								<div class="instructor-info">
+									<h3>Zachary (Zak) Kain</h3>
+									<p>email: zakkain@gmail.com</p>
+									<p>site: <a href="http://zacharykain.ca/">zacharykain.ca</a></p>
+									<p><a href="https://twitter.com/zakkain">@zakkain</a></p>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</section>
+			
 				<!-- end editable section -->
 
 			</div>
